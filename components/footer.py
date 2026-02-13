@@ -19,8 +19,8 @@ def render_footer():
             <div class="footer-section">
                 <h3>Project Team</h3>
                 <div class="contact-details">
-                    <p>👤 Chauhan Aman Satpal</p>
-                    <p>👤 Devam Gandhi</p>
+                    <p><a href="https://www.linkedin.com/in/aman-chauhan2001/"> 👤 Chauhan Aman Satpal </a></p>
+                    <p><a href="https://www.linkedin.com/in/devam-gandhi-8b70ba252"> 👤 Devam Gandhi</a></p>
                 </div>
             </div>
         </div>
