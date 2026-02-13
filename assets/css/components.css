@@ -1,0 +1,347 @@
+/* Components: Cards, Buttons, Inputs, Widgets */
+
+/* --- CARDS --- */
+div[data-testid="stVerticalBlock"]>div[style*="border"] {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    transition: all 0.1s ease;
+    overflow: hidden;
+
+    /* FLEXBOX ENFORCEMENT FOR GRID */
+    display: flex;
+    flex-direction: column;
+    height: 100% !important;
+    /* Force full height usage */
+    min-height: 480px;
+    /* Minimum fixed height */
+    justify-content: space-between;
+}
+
+div[data-testid="stVerticalBlock"]>div[style*="border"]:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    border-color: #2ea043;
+}
+
+/* Typography in Cards */
+.title-text {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #f0f6fc;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.author-text {
+    font-size: 0.95rem;
+    color: #8b949e;
+    margin-bottom: 12px;
+}
+
+/* --- BUTTONS --- */
+.stButton button {
+    background: linear-gradient(90deg, #238636 0%, #2ea043 100%);
+    color: white !important;
+    border: none;
+    border-radius: 8px;
+    /* Slightly cleaner radius */
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    text-transform: none;
+    /* Removed uppercase for cleaner look */
+    letter-spacing: 0px;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stButton button:hover {
+    background: linear-gradient(90deg, #2ea043 0%, #238636 100%);
+    box-shadow: 0 8px 16px rgba(46, 160, 67, 0.3);
+    transform: translateY(-1px);
+}
+
+.stButton button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* --- INPUTS --- */
+.stTextInput input {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    color: #f0f6fc;
+    border-radius: 8px;
+    padding: 1.2rem;
+    font-size: 1.1rem;
+}
+
+.stTextInput input:focus {
+    border-color: #2ea043;
+    box-shadow: 0 0 0 3px rgba(46, 160, 67, 0.2);
+}
+
+/* --- STAT METRIC CARDS --- */
+.metric-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 24px 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.metric-card:hover {
+    border-color: #2ea043;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.metric-value {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #f0f6fc;
+    /* White for better contrast on cards */
+    margin-bottom: 8px;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+}
+
+/* --- DATA INSIGHTS PAGE STYLES --- */
+
+/* Landscape Cards */
+.landscape-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.landscape-card:hover {
+    border-color: #2ea043;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.landscape-card h4 {
+    color: #f0f6fc;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.landscape-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0;
+}
+
+.landscape-card li {
+    color: #8b949e;
+    padding: 4px 0;
+    font-size: 0.9rem;
+}
+
+.landscape-card li:before {
+    content: "• ";
+    color: #2ea043;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.landscape-card p {
+    color: #8b949e;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Risk Assessment Panels */
+.risk-panel {
+    background-color: #161b22;
+    border-left: 4px solid;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 12px 0;
+    transition: all 0.3s ease;
+}
+
+.risk-panel:hover {
+    transform: translateX(5px);
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+}
+
+.risk-high {
+    border-left-color: #da3633;
+}
+
+.risk-medium {
+    border-left-color: #d29922;
+}
+
+.risk-low {
+    border-left-color: #238636;
+}
+
+.risk-panel h4 {
+    color: #f0f6fc;
+    margin: 0 0 8px 0;
+    font-size: 1.05rem;
+}
+
+.risk-panel p {
+    color: #8b949e;
+    margin: 4px 0;
+    font-size: 0.9rem;
+}
+
+.risk-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.badge-high {
+    background-color: #da3633;
+    color: white;
+}
+
+.badge-medium {
+    background-color: #d29922;
+    color: white;
+}
+
+.badge-low {
+    background-color: #238636;
+    color: white;
+}
+
+/* Readiness Progress Bars */
+.readiness-item {
+    margin: 20px 0;
+    padding: 16px;
+    background-color: #0d1117;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+.readiness-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.readiness-title {
+    color: #f0f6fc;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.readiness-level {
+    color: #8b949e;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.readiness-description {
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+/* Custom Progress Bars */
+.custom-progress-bar {
+    background-color: #21262d;
+    border-radius: 8px;
+    height: 12px;
+    overflow: hidden;
+    position: relative;
+    margin: 8px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.6s ease;
+}
+
+.progress-very-high {
+    background: linear-gradient(90deg, #7c3aed 0%, #a855f7 100%);
+}
+
+.progress-high {
+    background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+}
+
+.progress-medium {
+    background: linear-gradient(90deg, #d97706 0%, #f59e0b 100%);
+}
+
+.progress-low {
+    background: linear-gradient(90deg, #dc2626 0%, #ef4444 100%);
+}
+
+/* Impact Section */
+.impact-section {
+    background: linear-gradient(135deg, #1a7f64 0%, #2ea043 100%);
+    border-radius: 16px;
+    padding: 32px;
+    margin: 24px 0;
+    color: white;
+}
+
+.impact-section h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.impact-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.impact-section li {
+    padding: 8px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.impact-section li:before {
+    content: "✓ ";
+    color: #a7f3d0;
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+/* Warning Banner */
+.warning-banner {
+    background-color: #3d2b00;
+    border-left: 4px solid #d29922;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.warning-banner p {
+    color: #d29922;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}

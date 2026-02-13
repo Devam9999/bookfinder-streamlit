@@ -1,0 +1,142 @@
+/* --- PREMIUM DESIGN SYSTEM --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg-dark: #0B0F14;
+    --bg-surface: #11161C;
+    --bg-glass: rgba(17, 22, 28, 0.7);
+    --text-primary: #ECEDEE;
+    --text-secondary: #99A1AF;
+    --accent-primary: #3B82F6;
+    --accent-secondary: #8B5CF6;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --hover-glow: 0 0 20px rgba(59, 130, 246, 0.15);
+}
+
+html,
+body,
+[class*="css"] {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    scroll-behavior: smooth;
+}
+
+/* Main Background Override */
+.stApp {
+    background-color: var(--bg-dark);
+    background-image:
+        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+    background-attachment: fixed;
+}
+
+/* --- UTILITIES --- */
+.glass-panel {
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.max-width-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* .animate-enter {
+    animation: fadeIn 0.6s ease-out forwards;
+} */
+
+/* Streamlit container override for alignment */
+.block-container {
+    max-width: 1200px !important;
+    padding-top: 0 !important;
+    padding-bottom: 2rem !important;
+    margin-top: 0 !important;
+}
+
+/* Hide Streamlit Elements & Top Toolbar - Comprehensive */
+#MainMenu,
+footer,
+header,
+div[data-testid="stToolbar"],
+div[data-testid="stDecoration"],
+div[data-testid="stStatusWidget"],
+.stApp>header,
+section[data-testid="stHeader"],
+div[data-testid="stAppViewContainer"]>section:first-child,
+section[data-testid="stSidebar"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Global Reset for Top Spacing */
+.stApp,
+.main,
+section.main,
+div[data-testid="stAppViewContainer"] {
+    padding-top: 10 !important;
+    margin-top: 0 !important;
+}
+
+.block-container {
+    padding-top: 2rem !important;
+    margin-top: 0 !important;
+}
+
+section.main>div {
+    padding-top: 0 !important;
+}
+
+/* COMPREHENSIVE FIX FOR BLACK SPACE */
+
+/* 1. Hide empty element containers that take up space */
+div[data-testid="stElementContainer"]:empty {
+    display: none !important;
+}
+
+/* 2. Hide containers that only have style or script tags */
+div[data-testid="stElementContainer"]:has(style),
+div[data-testid="stElementContainer"]:has(script),
+div[data-testid="stElementContainer"]:has(div[data-testid="stMarkdown"]:empty) {
+    display: none !important;
+}
+
+/* 4. Fallback: Force negative margin on the first visible element if needed */
+/* This targets the first element inside the vertical block, countering any residual padding */
+div[data-testid="stVerticalBlock"]>div:first-child {
+    margin-top: 0 !important;
+}
+
+/* 5. Ensure header sticks to top */
+.header-container {
+    margin-top: 0 !important;
+    /* padding-top: 0.5rem !important; Keep slight padding for aesthetics */
+}

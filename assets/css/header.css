@@ -1,0 +1,138 @@
+/* Header & Navigation Styling */
+
+/* Header Container */
+.header-container {
+    padding: 0.5rem 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #30363d;
+    background-color: #0d1117;
+    /* Ensure background matches body for sticky feel if needed */
+}
+
+/* Brand Section */
+.brand-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 0;
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    /* 24px */
+    font-weight: 700;
+    color: #f0f6fc;
+    letter-spacing: -0.5px;
+    line-height: 1;
+}
+
+.brand-subtitle {
+    font-size: 0.9rem;
+    /* 14px */
+    color: #8b949e;
+    font-weight: 400;
+    margin-left: 12px;
+    padding-left: 12px;
+    border-left: 1px solid #30363d;
+    line-height: 1.2;
+    padding-top: 2px;
+    /* Visual alignment */
+}
+
+/* Navigation Buttons Styling */
+
+/* Common Button Reset for Header */
+div[data-testid="stHorizontalBlock"] button {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.2s ease !important;
+    margin-top: 0px !important;
+    /* Reset default margins */
+}
+
+/* Vertical Alignment Enforcement */
+div[data-testid="column"] {
+    display: flex !important;
+    align-items: center !important;
+    /* Force vertical centering */
+    justify-content: center !important;
+}
+
+/* Brand Section Adjustment */
+.brand-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 0;
+    height: 100%;
+    /* Ensure it takes full height of column for alignment */
+    padding-top: 4px;
+    /* Micro-adjustment to match button text baseline */
+}
+
+/* Text Link Style (Home, How It Works, Data Insights) */
+/* We target the buttons that are NOT the last one (About) */
+/* It's safer to style ALL as links, then override the last one */
+div[data-testid="stHorizontalBlock"] button p {
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+    padding-top: 2px;
+}
+
+div[data-testid="stHorizontalBlock"] button:hover {
+    color: #f0f6fc !important;
+}
+
+/* "About" Button - Outlined Style */
+/* Target the Last Column in the inner horizontal block which contains the 'About' button */
+/* The structure is: Column (Brand) | Column (Nav) -> [Col, Col, Col, Col (About)] */
+/* We want to target the button inside the 4th nested column of the nav section */
+
+/* We can identify it by the specific button text if needed, but CSS doesn't support text-content selectors.
+   Instead, we rely on the fact it is the LAST button in the header row.
+*/
+
+div[data-testid="stHorizontalBlock"] [data-testid="column"]:last-child button {
+    border: 1px solid #238636 !important;
+    color: #2ea043 !important;
+    border-radius: 6px !important;
+    padding: 0.4rem 1.2rem !important;
+    background: rgba(0, 0, 0, 0) !important;
+}
+
+div[data-testid="stHorizontalBlock"] [data-testid="column"]:last-child button:hover {
+    background: rgba(46, 160, 67, 0.1) !important;
+    color: #f0f6fc !important;
+    border-color: #2ea043 !important;
+}
+
+/* Override text styling for the Outline button */
+div[data-testid="stHorizontalBlock"] [data-testid="column"]:last-child button p {
+    font-weight: 600 !important;
+}
+
+/* Hero Section (Standardized for all pages) */
+.hero-container {
+    text-align: center;
+    padding: 3rem 0 4rem 0;
+    /* Consistent top/bottom padding */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #f0f6fc;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #8b949e;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
